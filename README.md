@@ -1,1 +1,1 @@
-# gestor-de-aulas-typescript
+# class-manager-typescript
