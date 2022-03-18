@@ -1,28 +1,39 @@
 {
-  "name": "class-manager-typescript",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "tsnd --transpile-only --respawn --ignore-watch __Test__ node_modules src/server",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Alysson-Alves23/class-manager-typescript.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Alysson-Alves23/class-manager-typescript/issues"
-  },
-  "homepage": "https://github.com/Alysson-Alves23/class-manager-typescript#readme",
-  "dependencies": {
-    "@types/express": "^4.17.13",
-    "@types/jest": "^27.4.1",
-    "express": "^4.17.3",
-    "jest": "^27.5.1",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.5.5"
-  }
+   "name": "class-manager-typescript",
+   "version": "1.0.0",
+   "description": "",
+   "main": "app.ts",
+   "scripts": {
+      "dev": "set NODE_ENV='dev' && tsnd --transpile-only --respawn --ignore-watch node_modules --ignore-watch __tests__ src/server",
+      "test": "set NODE_ENV='test' && jest",
+      "build": " set NODE_ENV='prod' && tsc --target ES5 --experimentalDecorators",
+      "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+   },                
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Alysson-Alves23/class-manager-typescript.git"
+   },
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/Alysson-Alves23/class-manager-typescript/issues"
+   },
+   "homepage": "https://github.com/Alysson-Alves23/class-manager-typescript#readme",
+   "dependencies": {
+      "@types/express": "^4.17.13",
+      "@types/jest": "^27.4.1",
+      "dotenv": "^16.0.0",
+      "express": "^4.17.3",
+      "jest": "^27.5.1",
+      "mysql": "^2.14.1",
+      "reflect-metadata": "^0.1.13",
+      "ts-node-dev": "^1.1.8",
+      "typeorm": "0.2.45",
+      "typescript": "^4.5.5"
+   },
+   "devDependencies": {
+      "@types/node": "^16.11.10",
+      "ts-node": "10.4.0",
+      "typescript": "4.5.2"
+   }
 }
