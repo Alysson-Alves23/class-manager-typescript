@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 
 dotenv.config({
-    path: process.env.NODE_ENV==='dev' ? '.env.dev':'test'?'.env.test':'.env.prod'
+    path: process.env.NODE_ENV==='dev' ? '.env.dev': process.env.NODE_ENV==='test'?'.env.test':'.env.prod'
 })
 
 module.exports = {
@@ -19,12 +19,9 @@ module.exports = {
    "migrations": [
       process.env.TYPEORM_MIGRATIONS
    ],
-   "subscribers": [
-      "src/subscriber/**/*.ts"
-   ],
+   
    "cli": {
       "entitiesDir": process.env.TYPEORM_ENTITIES_DIR,
-      "migrationsDir": process.env.TYPEORM_ENTITIES_DIR,
-      "subscribersDir":  process.env.TYPEORM_MIGRATIONS_DIR
+      "migrationsDir": process.env.TYPEORM_MIGRATIONS_DIR
    }
 }
